@@ -1,0 +1,112 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "e007587732d556ce310a",
+  "position": {
+    "x": 38.177299088649541,
+    "y": 348.89809444904722,
+    "z": 6000,
+    "height": 42.419221209610605,
+    "width": 1207.8873239436618,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "🟢"
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": "Classe A:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": " Responsáveis por até 80% do valor total das compras ",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": "🟡"
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": "Classe B",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": ": Responsáveis de 80% a 95% do valor total. ",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": "🔴"
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": "Classe C:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": " Responsáveis pelos 5% finais do valor",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

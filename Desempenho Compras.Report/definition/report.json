@@ -1,0 +1,303 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.2.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY24SU10",
+      "reportVersionAtImport": {
+        "visual": "1.8.95",
+        "report": "2.0.95",
+        "page": "1.3.95"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "605c2af06a44b38d0065",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "NOME"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "NOME"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'GUSTAVO MOLINA MATSUMOTO'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'SAMANTA DONDA DE SOUZA BAUAB'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'SOLICITAÇÃO SIMPLIFICADA'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "isLockedInViewMode": true,
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "e735eb77d2c1cac21c4e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "GRUPO"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "GRUPO"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'BOVINOS'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'SUINOS'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'INDUSTRIALIZADOS'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'INSUMOS AGROPECUARIOS'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'FABRICA DE RACAO'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "isLockedInViewMode": true,
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "htmlContent443BE3AD55E043BF878BED274D3A6855"
+  ],
+  "resourcePackages": [
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "bg_gastos7982812005847436.png",
+          "path": "bg_gastos7982812005847436.png",
+          "type": "Image"
+        },
+        {
+          "name": "bgPareto5082877423729569.png",
+          "path": "bgPareto5082877423729569.png",
+          "type": "Image"
+        },
+        {
+          "name": "bgSolicitacoes957574424165779.png",
+          "path": "bgSolicitacoes957574424165779.png",
+          "type": "Image"
+        },
+        {
+          "name": "filter_(2)8340396520644273.png",
+          "path": "filter_(2)8340396520644273.png",
+          "type": "Image"
+        },
+        {
+          "name": "Tecnologia_da_Informa__o054664433765140075.svg",
+          "path": "Tecnologia_da_Informa__o054664433765140075.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Tecnologia_da_Informa__o20032734671342967.svg",
+          "path": "Tecnologia_da_Informa__o20032734671342967.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Tecnologia_da_Informa__o8132117448456588.svg",
+          "path": "Tecnologia_da_Informa__o8132117448456588.svg",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY24SU10",
+          "path": "BaseThemes/CY24SU10.json",
+          "type": "BaseTheme"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

@@ -1,0 +1,43 @@
+table DADOS_EMPRESA
+	lineageTag: 85c28999-babb-4e15-947b-7087620a2436
+
+	column NROEMPRESA
+		dataType: int64
+		formatString: 0
+		lineageTag: 2ee7633f-46dc-411d-a886-4bda75f80f6a
+		summarizeBy: none
+		sourceColumn: NROEMPRESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column FANTASIA
+		dataType: string
+		lineageTag: 0eec4521-d531-43ac-a1a9-c629f2374dcd
+		summarizeBy: none
+		sourceColumn: FANTASIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMEREDUZIDO
+		dataType: string
+		lineageTag: b9a64878-47d5-4c11-bdd5-ea6b758b77a5
+		summarizeBy: none
+		sourceColumn: NOMEREDUZIDO
+		sortByColumn: NROEMPRESA
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DADOS_EMPRESA = m
+		mode: import
+		source =
+				let
+				    Fonte = Oracle.Database("datavale", [HierarchicalNavigation=true, Query="SELECT E.NROEMPRESA,E.FANTASIA,E.NOMEREDUZIDO FROM GE_EMPRESA E"])
+				in
+				    Fonte
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

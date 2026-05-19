@@ -1,0 +1,139 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 377.7892045182416,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1619.6036772659079,
+            "y": 194.35244127190896
+          },
+          "nodeIndex": "_medidas",
+          "nodeLineageTag": "e1d7000b-cac9-4a31-ab0e-01c5625b3468",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 284,
+            "y": 0
+          },
+          "nodeIndex": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+          "nodeLineageTag": "1b78f30f-b37b-4e41-8a35-ec5099e60e9f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1178.7875124061727,
+            "y": 0
+          },
+          "nodeIndex": "Calendario",
+          "nodeLineageTag": "7f2f0e0e-44b2-4744-b07e-7b0eddc49863",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1623.9578295584872,
+            "y": 50.563236753667368
+          },
+          "nodeIndex": "_atualiza",
+          "nodeLineageTag": "a779ae2d-ff95-4146-80e3-bdbcd5ef3edc",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 279.1990022212517,
+            "y": 454.8043768010574
+          },
+          "nodeIndex": "DADOS_EMPRESA",
+          "nodeLineageTag": "85c28999-babb-4e15-947b-7087620a2436",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1194.4957980827303,
+            "y": 232.27486883715949
+          },
+          "nodeIndex": "Calendario2",
+          "nodeLineageTag": "25bbbd38-e652-4981-96f7-9a26f8f75054",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 622.08097556748908,
+            "y": 546.28413763633546
+          },
+          "nodeIndex": "Compradores",
+          "nodeLineageTag": "aee86879-c25d-41a4-8c25-9b6d4aaf754b",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1618.7065935644885,
+            "y": 334.84906650207188
+          },
+          "nodeIndex": "Parâmetro",
+          "nodeLineageTag": "46b8accf-9233-4154-92fe-985015c089dd",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1265.92583069799,
+            "y": 563.96373304212716
+          },
+          "nodeIndex": "Setor",
+          "nodeLineageTag": "d0cad892-efe9-4d18-936a-8ef5b2db120c",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 4
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 63.287087723234073,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}

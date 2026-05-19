@@ -1,0 +1,2050 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "comFiltros SolicGraf",
+  "name": "5ff11a15e6c30d57ed2d",
+  "options": {
+    "targetVisualNames": [],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "c30835580034d242d104",
+    "filters": {
+      "byName": {
+        "605c2af06a44b38d0065": {
+          "name": "605c2af06a44b38d0065",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "d",
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "NOME"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'GUSTAVO MOLINA MATSUMOTO'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'SAMANTA DONDA DE SOUZA BAUAB'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'SOLICITAÇÃO SIMPLIFICADA'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                }
+              },
+              "Property": "NOME"
+            }
+          },
+          "howCreated": 1
+        },
+        "e735eb77d2c1cac21c4e": {
+          "name": "e735eb77d2c1cac21c4e",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "d",
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "GRUPO"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'BOVINOS'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'SUINOS'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'INDUSTRIALIZADOS'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'INSUMOS AGROPECUARIOS'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'FABRICA DE RACAO'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                }
+              },
+              "Property": "GRUPO"
+            }
+          },
+          "howCreated": 1
+        }
+      }
+    },
+    "sections": {
+      "c30835580034d242d104": {
+        "filters": {
+          "byExpr": [
+            {
+              "name": "0d2010fe2ca932aa864c",
+              "type": "Categorical",
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "Status Data"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'OK'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                    }
+                  },
+                  "Property": "Status Data"
+                }
+              },
+              "howCreated": 1
+            }
+          ]
+        },
+        "visualContainers": {
+          "e7814d81e10b110bc506": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f17922cc860363fe9e4c",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_medidas",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 2,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "Solicitações Criadas no Período"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Criadas no Período"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d8650035350b0e56598b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Urgentes Criadas no Periodo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cf7d023c9c0751587a4b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "nomeMES/ano"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "areaChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "nomeMES/ano"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "nomeMES/ano"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a6836a8e311d08dac351": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "053f2e54111fe5c3af86",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "Prioridade"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9190e89ce5ef3f1a945c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Criadas no Período"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Criadas no Período"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "Prioridade"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "4281d3f6ce77a3c342b0": {
+            "filters": {
+              "byName": {
+                "57dbe6511480ed89413e": {
+                  "name": "57dbe6511480ed89413e",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "c",
+                        "Entity": "Calendario2",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "c"
+                                    }
+                                  },
+                                  "Property": "Ano"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "2025L"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Ano"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "906559adde476b3f547c",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_medidas",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 2,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "Solicitações Criadas no Período"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Criadas no Período"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1e42ed830dc00ae86f6f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Urgentes Criadas no Periodo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0b741405bc55f1c3665d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "nomeMES/ano"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "areaChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "nomeMES/ano"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "79fca38c9b945c7c49d3": {
+            "filters": {
+              "byName": {
+                "e9581dd020e9cb623e9b": {
+                  "name": "e9581dd020e9cb623e9b",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "c",
+                        "Entity": "Calendario2",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "c"
+                                    }
+                                  },
+                                  "Property": "Ano"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "2026L"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Ano"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "9ded975ddc2793285c38",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_medidas",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 2,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "Solicitações Criadas no Período"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Criadas no Período"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "46a41ecf392b3df877c1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Urgentes Criadas no Periodo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "46d87eafb5688eae6820",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "nomeMES/ano"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "areaChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "nomeMES/ano"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "f4ef5de1aa10e30d8792": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "4a92ed827824873cb6cd",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "c",
+                        "Entity": "Calendario2",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "c"
+                                    }
+                                  },
+                                  "Property": "Ano"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "2025L"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Ano"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "36b9d296db5fa1d5b4ca",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "% Urgente Periodo"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "% Urgente Periodo"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "d5658484e4aab00337ce": {
+            "filters": {
+              "byName": {
+                "e4a840c850dd9e60e41a": {
+                  "name": "e4a840c850dd9e60e41a",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "c",
+                        "Entity": "Calendario2",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "c"
+                                    }
+                                  },
+                                  "Property": "Ano"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "2025L"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Ano"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "3389aba1ecfe6ffa2b6c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Urgentes Criadas no Periodo"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Urgentes Criadas no Periodo"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "acafdd280e78b3e73ee7": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "fa2675175bd9cc3fee5c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Criadas no Período"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Criadas no Período"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "5333e1f72e7dae430831": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "4a92ed827824873cb6cd",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "c",
+                        "Entity": "Calendario2",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "c"
+                                    }
+                                  },
+                                  "Property": "Ano"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "2026L"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Ano"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "31a1e048f66996264a42",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "% Urgente Periodo"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "% Urgente Periodo"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "a1c941e003eb3831096c": {
+            "filters": {
+              "byName": {
+                "e4a840c850dd9e60e41a": {
+                  "name": "e4a840c850dd9e60e41a",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "c",
+                        "Entity": "Calendario2",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "c"
+                                    }
+                                  },
+                                  "Property": "Ano"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "2026L"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Ano"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "07e359de40e3cac5fdbf",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Urgentes Criadas no Periodo"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Urgentes Criadas no Periodo"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "1c4a600b31348cb641bd": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "4a92ed827824873cb6cd",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Ano"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "13f65674a5ab88918ccd",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "% Urgente Periodo"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "% Urgente Periodo"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "7f23fc492ed0900d8807": {
+            "filters": {
+              "byName": {
+                "e4a840c850dd9e60e41a": {
+                  "name": "e4a840c850dd9e60e41a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Ano"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "af6e3f3b21c13006beae",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Urgentes Criadas no Periodo"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Urgentes Criadas no Periodo"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "5a9a5ea73234d02556be": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f05d1814840caabcd4e0",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "c",
+                        "Entity": "Calendario2",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "c"
+                                    }
+                                  },
+                                  "Property": "Ano"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "2025L"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Ano"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "43115d0b7f9e80902a4f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Criadas no Período"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Criadas no Período"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "7a3bb40325a2e2d75061": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "50f5104f18aac3201432",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "c",
+                        "Entity": "Calendario2",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "c"
+                                    }
+                                  },
+                                  "Property": "Ano"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "2026L"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Ano"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "6f26e2d70e5f2796bcb6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Criadas no Período"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Solicitações Criadas no Período"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "3c34c2d0b0506c16c600": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "eee71a473200e077d7e5": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f4da7da09977c6f201ef",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Compradores"
+                        }
+                      },
+                      "Property": "NOME"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Compradores"
+                        }
+                      },
+                      "Property": "NOME"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "f0fb2c06ac2e307e221c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "cefed0e8d146b12d264e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "GRUPO"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6932aa2a3e7e564d7c2a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "DESCRICAO"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e420d12c5950468dd809",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "SUBGRUPO"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "GRUPO"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "SUBGRUPO"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "DESCRICAO"
+                    }
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Values"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "DCEVPB_SOLICITACAOTEMPOAPROVACAO.GRUPO"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                              }
+                            },
+                            "Property": "GRUPO"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "DCEVPB_SOLICITACAOTEMPOAPROVACAO.SUBGRUPO"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                              }
+                            },
+                            "Property": "SUBGRUPO"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DESCRICAO"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null,
+                    "children": [
+                      {
+                        "identityValues": [
+                          {
+                            "Literal": {
+                              "Value": "'ACESSORIOS'"
+                            }
+                          }
+                        ],
+                        "isToggled": true,
+                        "children": [
+                          {
+                            "identityValues": [
+                              {
+                                "Literal": {
+                                  "Value": "'ACESSORIOS'"
+                                }
+                              }
+                            ],
+                            "isToggled": true
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "171d8d1e5ca04ea9ed18": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a1ba7c7622a1b08808ed",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "statusTXT"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "statusTXT"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "47f9392ea433d7756979": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b8fa395531f6d136b68f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "NROSOLICITACAO"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "NROSOLICITACAO"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "78dacdf460d05d913e40": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "7aa9afc277707efe9ae3",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DADOS_EMPRESA"
+                        }
+                      },
+                      "Property": "NOMEREDUZIDO"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DADOS_EMPRESA"
+                        }
+                      },
+                      "Property": "NOMEREDUZIDO"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "4c6007d9a2835c404624": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f034c08dde7e0806e96e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "Prioridade"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "Prioridade"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "6d2dfeba02596e54bdea": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "fd02605090981eb79d70": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "101d9749a833be3b079b": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f65a8c9b22bc04b363c1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Between'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "18081ccf88e87c6dc8e4": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "004354a9328cec08c11b": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          }
+        },
+        "visualContainerGroups": {
+          "da5eeac0d9953de40001": {
+            "isHidden": false
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

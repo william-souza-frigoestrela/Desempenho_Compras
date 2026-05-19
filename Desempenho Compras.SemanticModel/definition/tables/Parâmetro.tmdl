@@ -1,0 +1,56 @@
+table Parâmetro
+	lineageTag: 46b8accf-9233-4154-92fe-985015c089dd
+
+	column Parâmetro
+		lineageTag: 863e50ff-5ce9-454f-af08-447ef7428d4f
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parâmetro Pedido'
+
+		relatedColumnDetails
+			groupByColumn: 'Parâmetro Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parâmetro Campos'
+		isHidden
+		lineageTag: 6c81209e-068a-4ed2-a9e3-e5ddd7dfab97
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parâmetro Pedido'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parâmetro Pedido'
+		isHidden
+		formatString: 0
+		lineageTag: 8d8cbf86-0d4e-464c-822b-281a641f87e0
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parâmetro = calculated
+		mode: import
+		source = ```
+				{
+				    ("Comprador", NAMEOF('DCEVPB_SOLICITACAOTEMPOAPROVACAO'[NOME]), 0),
+				    ("Empresa", NAMEOF('DADOS_EMPRESA'[NOMEREDUZIDO]), 1),
+				    ("Grupo", NAMEOF('DCEVPB_SOLICITACAOTEMPOAPROVACAO'[GRUPO]), 2),
+				    ("Subgrupo", NAMEOF('DCEVPB_SOLICITACAOTEMPOAPROVACAO'[SUBGRUPO]), 3),
+				    ("Produto", NAMEOF('DCEVPB_SOLICITACAOTEMPOAPROVACAO'[DESCRICAO]), 4),
+				    ("Solicitação", NAMEOF('DCEVPB_SOLICITACAOTEMPOAPROVACAO'[NROSOLICITACAO]), 5),
+				    ("Solicitante", NAMEOF('DCEVPB_SOLICITACAOTEMPOAPROVACAO'[SOLICITANTE]), 6),
+				    ("Status", NAMEOF('DCEVPB_SOLICITACAOTEMPOAPROVACAO'[statusTXT]), 7),
+				    ("Setor", NAMEOF(Setor[SETOR]), 8)    
+				}
+				```
+
+	annotation PBI_Id = 22bd46a807674a2b87ce5a7237fe0628
+

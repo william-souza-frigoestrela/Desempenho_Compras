@@ -1,0 +1,24 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "com Filtros TM",
+  "name": "b9742e1594945e596126",
+  "options": {
+    "targetVisualNames": [],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "f165ed30ae16c99b4b65",
+    "sections": {
+      "f165ed30ae16c99b4b65": {
+        "visualContainers": {},
+        "visualContainerGroups": {
+          "7e5648725df9c17d510d": {
+            "isHidden": false
+          }
+        }
+      }
+    },
+    "objects": {}
+  }
+}

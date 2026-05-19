@@ -1,0 +1,24 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "EFETIVIDADE COM FILTRO",
+  "name": "15db7b3db57cc4da07a3",
+  "options": {
+    "targetVisualNames": [],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ba6c51d5d9e1370e5a64",
+    "sections": {
+      "ba6c51d5d9e1370e5a64": {
+        "visualContainers": {},
+        "visualContainerGroups": {
+          "f7b180ff1212c300416c": {
+            "isHidden": false
+          }
+        }
+      }
+    },
+    "objects": {}
+  }
+}

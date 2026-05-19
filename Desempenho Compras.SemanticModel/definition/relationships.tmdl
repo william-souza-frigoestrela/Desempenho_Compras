@@ -1,0 +1,27 @@
+relationship AutoDetected_ba7fb79c-dff4-447a-8618-f23fbef570b4
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.NROEMPRESA
+	toColumn: DADOS_EMPRESA.NROEMPRESA
+
+relationship dff24897-f5a9-fba9-f139-74eda555117d
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.NOME
+	toColumn: Compradores.NOME
+
+relationship b3204003-5a82-6480-8e61-58949597aad3
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.SEQSOLICITANTE
+	toColumn: Setor.SEQPESSOADTV
+
+relationship 997f2226-4f63-db96-ea9f-17c18279bcb1
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTASOLICITACAO
+	toColumn: Calendario2.Date
+
+relationship 9f34ddc1-b163-846c-f129-1579058add4e
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTASOLICITACAO
+	toColumn: Calendario.Date
+
+relationship 5e5ed9ab-1c2d-250d-7c46-591f69cb1e45
+	isActive: false
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTAEMISSAO
+	toColumn: Calendario2.Date
+

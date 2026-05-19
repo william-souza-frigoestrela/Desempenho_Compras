@@ -1,0 +1,509 @@
+table _medidas
+	lineageTag: e1d7000b-cac9-4a31-ab0e-01c5625b3468
+
+	measure 'Pedidos Gerados no Período' =
+			CALCULATE(DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[Pk Pedido]),
+			DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] >= MIN(Calendario2[Date]) && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] <= MAX(Calendario2[Date]))
+		formatString: #,0
+		displayFolder: _TelaEficiencia
+		lineageTag: 32d5a226-6a83-4590-85b1-6be7c9dc7280
+
+	measure 'Solicitações em Aberto' =
+			
+			
+			CALCULATE(DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[PK]), DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUS] >=3 && DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUS] <=4)
+		formatString: #,0
+		displayFolder: _TelaEficiencia
+		lineageTag: 17a4f9ef-eec0-41be-b0cf-1322bf9a2add
+
+	measure 'Solicitações Criadas no Período' =
+			
+			
+			CALCULATE(DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[PK]),
+			 DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO] >= MIN(Calendario2[Date]) &&
+			DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO] <= MAX(Calendario2[Date])
+			
+			)
+		formatString: #,0
+		displayFolder: _TelaEficiencia
+		lineageTag: 271d86aa-a3a8-4b15-a636-d7179abb0b01
+
+	measure 'Tempo Médio (Aprovação x Pedido)' =
+			
+			
+			VAR TempoMedioDias =
+			    AVERAGEX(
+			        FILTER(
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+			            NOT(ISBLANK(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATAHORAPEDIDO])) &&
+			            NOT(ISBLANK(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SOLIAPROVACAO])) &&
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAAPROVACAOPEDIDO] >= MIN(Calendario2[Date]) && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAAPROVACAOPEDIDO] <= MAX(Calendario2[Date])
+			        ),
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATAHORAPEDIDO] - DCEVPB_SOLICITACAOTEMPOAPROVACAO[SOLIAPROVACAO]
+			    )
+			VAR Dias = INT(TempoMedioDias)
+			VAR Horas = INT(MOD(TempoMedioDias * 24, 24))
+			VAR Minutos = INT(MOD(TempoMedioDias * 24 * 60, 60))
+			RETURN
+			IF([Pedidos Gerados no Período] < 1 , BLANK(),
+			
+			FORMAT(Dias, "00") & "D " &
+			FORMAT(Horas, "00") & "H " &
+			FORMAT(Minutos, "00"&"M "))
+		displayFolder: _TelaEficiencia
+		lineageTag: cd433404-c699-46ee-b8ae-6a4edd6c65bd
+
+	measure 'Solicitação Mais Antiga' = CALCULATE(min(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO]), DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUS] >=3 && DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUS] <=4)
+		formatString: Short Date
+		displayFolder: _TelaEficiencia
+		lineageTag: a6ae7f1b-759e-4579-b95e-f3f2854f2e67
+
+	measure 'Qtd Pedidos Sem Entrega Realizada' = CALCULATE(DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[Pk Pedido]), DCEVPB_SOLICITACAOTEMPOAPROVACAO[NRONOTAFISCAL] = BLANK())
+		formatString: #,0
+		displayFolder: _TelaEficiencia
+		lineageTag: f759e1b9-b893-47a4-ae04-402ecc544e2f
+
+	measure 'Itens de Solicitações em Aberto' =
+			
+			
+			CALCULATE(DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[PK_Item]), DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUS] >=3 && DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUS] <=4)
+		formatString: #,0
+		displayFolder: _TelaEficiencia
+		lineageTag: 35bb6e72-70a3-4fe1-b770-6f863b3375d2
+
+	measure 'Itens Solicitados no Período' =
+			
+			
+			CALCULATE(DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[PK_Item]),
+			 DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO] >= MIN(Calendario2[Date]) &&
+			DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO] <= MAX(Calendario2[Date])
+			
+			)
+		formatString: #,0
+		displayFolder: _TelaEficiencia
+		lineageTag: 6c587074-181a-4a89-aa48-6b4f589333b1
+
+	measure 'Valor Pedidos Periodo' = ```
+			CALCULATE(sum(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRPRODUTO]), 
+			DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATAHORAPEDIDO] >= MIN(Calendario2[Date]) && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATAHORAPEDIDO] <= MAX(Calendario2[Date]))
+			```
+		displayFolder: _TelaEficiencia
+		lineageTag: fa317395-06cc-4052-9605-4465e8ec980d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Valor Pedidos Total Periodo' = ```
+			CALCULATE(sum(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRPRODUTOTOTAL]), 
+			DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] >= MIN(Calendario2[Date]) && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] <= MAX(Calendario2[Date]))
+			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: _TelaEficiencia
+		lineageTag: 045d418e-7e55-4251-a63b-087bb5c53c96
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Solicitações Urgentes Criadas no Periodo' = CALCULATE([Solicitações Criadas no Período],DCEVPB_SOLICITACAOTEMPOAPROVACAO[Prioridade] = "Urgente")+0
+		formatString: #,0
+		displayFolder: _TelaEficiencia
+		lineageTag: ca981229-3522-4441-b1ce-0ef0403e116a
+
+	measure '% Urgente Periodo' = DIVIDE([Solicitações Urgentes Criadas no Periodo],[Solicitações Criadas no Período],0)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _TelaEficiencia
+		lineageTag: 461b75b2-817a-4800-b9b1-f460043574a2
+
+	measure 'Solicitações Criadas no Período ainda em Aberto' = ```
+			
+			
+			CALCULATE(DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[PK]),
+			 DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO] >= MIN(Calendario2[Date]) &&
+			DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO] <= MAX(Calendario2[Date]) && 
+			DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUS] >=3 && DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUS] <=4
+			
+			)+0
+			```
+		formatString: #,0
+		displayFolder: _TelaEficiencia
+		lineageTag: 8859756d-a32f-4057-8b77-2d5edeeca567
+
+	measure _somaVlrCompra =
+			CALCULATE(SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRPRODUTOTOTAL]), DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROPEDIDO] <> BLANK())
+			//soma o valor total dos pedidos que temos com o fornecedor
+		formatString: "R$"#,0.00;-"R$"#,0.00;"R$"#,0.00
+		displayFolder: pareto
+		lineageTag: af75348d-626c-43e0-8853-a51db547bd55
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-BR"}
+
+	measure o_RankingCategorias =
+			
+			RANKX(
+			    ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn]), [_somaVlrCompra]
+			)
+			
+			//Cria um ranking para os fornecedores de acordo com o valor total comprado com eles. (fornecedores que mais gastamos)
+		formatString: 0
+		displayFolder: pareto
+		lineageTag: 7b4a7907-34cc-4fa3-be55-6cd809994144
+
+	measure _somaAcumulada =
+			
+			CALCULATE(
+			    [_somaVlrCompra],
+			    TOPN(
+			        [o_RankingCategorias],
+			        ALL( DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn] ),
+			        [_somaVlrCompra],
+			        DESC
+			    )
+			)
+		formatString: "R$"#,0.00;-"R$"#,0.00;"R$"#,0.00
+		displayFolder: pareto
+		lineageTag: 37301b31-e663-4384-9270-fadc8321f91d
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-BR"}
+
+	measure _percentualAcumulado = [_somaAcumulada]/CALCULATE([_somaVlrCompra],ALL(DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn]))
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: pareto
+		lineageTag: 2e6976b0-dd03-4b7c-b8a6-b69a49785f18
+
+	measure 'ABC Fornecedor (por gasto)' =
+			
+			VAR PercAcum = [_percentualAcumulado]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    PercAcum <= 0.8, "Classe A",
+			    PercAcum <= 0.95, "Classe B",
+			    "Classe C"
+			)
+		displayFolder: pareto
+		lineageTag: 51f18ee6-d4ab-45fe-a8e0-e8d7a1a99576
+
+	measure 'Cor ABC' =
+			
+			SWITCH(
+			    [ABC Fornecedor (por gasto)],
+			    "Classe A", "#2ECC71",   -- Verde
+			    "Classe B", "#F1C40F",   -- Amarelo
+			    "Classe C", "#E74C3C",   -- Vermelho
+			    "#95A5A6"         -- Cinza
+			)
+		displayFolder: pareto
+		lineageTag: f1139402-e486-4863-8d1d-5cc469a99ae4
+
+	measure 'qtdFornClasse A' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn]),
+			    FILTER(
+			        ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn]),
+			        [ABC Fornecedor (por gasto)] = "Classe A"
+			    )
+			)+0
+		formatString: 0
+		displayFolder: pareto
+		lineageTag: 66fdd780-4c38-4941-a30f-d46cb599a593
+
+	measure 'qtdFornClasse B' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn]),
+			    FILTER(
+			        ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn]),
+			        [ABC Fornecedor (por gasto)] = "Classe B"
+			    )
+			)+0
+		formatString: #,0
+		displayFolder: pareto
+		lineageTag: f05fb911-adcb-4811-9f3a-9b2c6f6c6f31
+
+	measure 'qtdFornClasse C' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn]),
+			    FILTER(
+			        ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn]),
+			        [ABC Fornecedor (por gasto)] = "Classe C"
+			    )
+			)+0
+		formatString: #,0
+		displayFolder: pareto
+		lineageTag: 320ffb14-3050-47dd-bd16-48d6b08a2033
+
+	measure qtdForn = DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn])+0
+		formatString: #,0
+		displayFolder: pareto
+		lineageTag: dcd2e511-b9b7-47a2-85e9-803335d484d0
+
+	measure _percentTruncado = TRUNC([_percentualAcumulado],4)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: pareto
+		lineageTag: 3d02e339-9092-4375-9548-9ba0c5f3315d
+
+	measure _percentualFormatado = [_percentualAcumulado]
+		formatString: 0.000000%;-0.000000%;0.000000%
+		displayFolder: pareto
+		lineageTag: dfea4912-4fa2-42dd-a637-2c1b379f3ba5
+
+	measure rankingTabela = IF(ISINSCOPE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn]),[o_RankingCategorias], BLANK())
+		formatString: 0
+		displayFolder: pareto
+		lineageTag: f67781ef-d1b1-4a58-8a86-22bb0b8a88e4
+
+	measure totalAcumuladoTabela = IF(ISINSCOPE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn]), [_somaAcumulada], MAXX(ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn]), [_somaAcumulada]))
+		displayFolder: pareto
+		lineageTag: d1333b0b-d2be-4ff2-991b-dea58f462313
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure _percentAcumuladoTabela = IF(ISINSCOPE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn]), [_percentTruncado], MAXX(ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn]), [_percentTruncado]))
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: pareto
+		lineageTag: 9fc4fba9-56cc-4a7c-a7ee-3d1d102df47c
+
+	measure abcFornecedorTabela =
+			
+			IF(
+			    ISINSCOPE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[seqNomeForn]),
+			    [ABC Fornecedor (por gasto)],
+			    BLANK()
+			)
+		displayFolder: pareto
+		lineageTag: 0c2044c9-7ffc-49db-afa4-d0d1558448c8
+
+	measure 'Solicitações do Período com Pedido' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[PK]),
+			    TREATAS(VALUES(Calendario2[Date]), DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO]),
+			    REMOVEFILTERS(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			    NOT(ISBLANK(DCEVPB_SOLICITACAOTEMPOAPROVACAO[Pk Pedido]))
+			)
+		formatString: 0
+		displayFolder: _TelaEficiencia
+		lineageTag: 230a425f-947f-46c0-901d-5f4ce6cbb534
+
+	measure 'Solicitações Criadas no Período (Solicitação)' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[PK]),
+			    TREATAS(VALUES(Calendario2[Date]), DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO]),
+			    REMOVEFILTERS(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO])
+			)
+		formatString: 0
+		displayFolder: _TelaEficiencia
+		lineageTag: fdbb470a-1371-4882-bf51-1a276d8c6abc
+
+	measure 'Itens com Pedido (Período Pedido)' =
+			
+			CALCULATE(
+			    COUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[PK_Item]),
+			    DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] >= MIN(Calendario2[Date]) &&
+			    DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] <= MAX(Calendario2[Date]) &&
+			    NOT(ISBLANK(DCEVPB_SOLICITACAOTEMPOAPROVACAO[Pk Pedido]))
+			)
+		formatString: #,0
+		displayFolder: _TelaEficiencia
+		lineageTag: 45ef03a7-3dfd-41ff-9965-882ee0e52976
+
+	measure 'Eficiência ( itensSolicitados vs itensEntregues)' = ```
+			
+			
+			var vr1 = [Itens com Pedido (Período Pedido)] 
+			VAR Vr2 = [Itens Solicitados no Período]
+			RETURN
+			IF(vr1 = 0 && Vr2 > 0, 0,
+			DIVIDE(vr1,Vr2,1))
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _TelaEficiencia
+		lineageTag: 7cdce5ab-6b4f-44d5-9fb8-b765cad46b87
+
+	measure itensAbertos2 = CALCULATE(DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[PK_Item]), DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROPEDIDO] = BLANK())
+		formatString: 0
+		displayFolder: _TelaEficiencia
+		lineageTag: 152519e1-bbac-428f-abf1-f68f6f65dd29
+
+	measure 'Rank Produto' =
+			
+			RANKX(
+			    ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SUBGRUPO]),
+			    [_somaVlrCompra],
+			    ,
+			    DESC,
+			    DENSE
+			)
+		formatString: 0
+		displayFolder: pareto
+		lineageTag: 47665a4f-6e20-436b-9ddd-3b1c2992a9c9
+
+	measure 'Gasto Acumulado Produto' =
+			
+			VAR RankAtual = [Rank Produto]
+			RETURN
+			CALCULATE(
+			    [_somaVlrCompra],
+			    FILTER(
+			        ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SUBGRUPO]),
+			        [Rank Produto] <= RankAtual
+			    )
+			)
+		displayFolder: pareto
+		lineageTag: 1ff7ecd5-0704-4039-9730-babc54e8f65d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Acumulado Produto' =
+			
+			DIVIDE(
+			    [Gasto Acumulado Produto],
+			    CALCULATE(
+			        [_somaVlrCompra],
+			        ALL(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SUBGRUPO])
+			    )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: pareto
+		lineageTag: 3efaf634-7d2e-49bf-9f2c-4d65850f94e1
+
+	measure 'ABC Produto' =
+			
+			VAR Perc = [% Acumulado Produto]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    Perc <= 0.8, "Classe A",
+			    Perc <= 0.95, "Classe B",
+			    "Classe C"
+			)
+		displayFolder: pareto
+		lineageTag: 0449669a-1e35-4c0f-8d05-ac1b07ddf90e
+
+	measure 'Cor ABC Prod' =
+			
+			SWITCH(
+			    [ABC Produto],
+			    "Classe A", "#2ECC71",   -- Verde
+			    "Classe B", "#F1C40F",   -- Amarelo
+			    "Classe C", "#E74C3C",   -- Vermelho
+			    "#95A5A6"         -- Cinza
+			)
+		displayFolder: pareto
+		lineageTag: e7de9a59-8488-42c8-8d41-433f3b8a30d5
+
+	measure '_percentAcumuladoTabela prod' = IF(ISINSCOPE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SUBGRUPO]), [%truncado produto], MAXX(ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SUBGRUPO]), [%truncado produto]))
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: pareto
+		lineageTag: a978ff6f-5233-463a-839f-ef8996cd7293
+
+	measure '%truncado produto' = TRUNC([% Acumulado Produto],4)
+		displayFolder: pareto
+		lineageTag: 2ff30992-aaea-4819-97c8-af283c6e514e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'qtdSubgrupoClasse A' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SUBGRUPO]),
+			    FILTER(
+			        ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SUBGRUPO]),
+			        [ABC Produto] = "Classe A"
+			    )
+			)+0
+		formatString: 0
+		displayFolder: pareto
+		lineageTag: fb2e0400-6d1b-4034-abb5-b799ccbd408d
+
+	measure 'qtdSubgrupoClasse B' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SUBGRUPO]),
+			    FILTER(
+			        ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SUBGRUPO]),
+			        [ABC Produto] = "Classe B"
+			    )
+			)+0
+		formatString: 0
+		displayFolder: pareto
+		lineageTag: 4a9e0e2b-ff43-4afb-a026-a129724f5956
+
+	measure 'qtdSubgrupoClasse C' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SUBGRUPO]),
+			    FILTER(
+			        ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SUBGRUPO]),
+			        [ABC Produto] = "Classe C"
+			    )
+			)+0
+		formatString: 0
+		displayFolder: pareto
+		lineageTag: 501fa32e-b812-4bfb-933d-f14ab95c29c3
+
+	measure qtdSubgrupo = DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SUBGRUPO])
+		formatString: 0
+		displayFolder: pareto
+		lineageTag: 49ab49ee-4a5b-4749-88ad-8e71efe1033c
+
+	measure 'Valor Pedidos Total Periodo 25' = ```
+			
+			CALCULATE(
+			    SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRPRODUTOTOTAL]), 
+			    DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATAHORAPEDIDO] >= MIN(Calendario2[Date]) && 
+			    DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATAHORAPEDIDO] <= MAX(Calendario2[Date]),
+			    YEAR(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATAHORAPEDIDO]) = 2025
+			)
+			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: _TelaEficiencia
+		lineageTag: dea84246-501d-4928-b66c-d9c172366279
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Valor Pedidos Total Periodo 26' = ```
+			
+			CALCULATE(
+			    SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRPRODUTOTOTAL]), 
+			    DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATAHORAPEDIDO] >= MIN(Calendario2[Date]) && 
+			    DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATAHORAPEDIDO] <= MAX(Calendario2[Date]),
+			    YEAR(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATAHORAPEDIDO]) = 2026
+			)
+			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: _TelaEficiencia
+		lineageTag: c44de43c-a725-45b5-b01d-edd537705cc7
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Pedidos Gerados no Período v2' =
+			
+			CALCULATE(DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[Pk Pedido]),
+			USERELATIONSHIP(Calendario2[Date],DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]))
+		formatString: 0
+		displayFolder: _TelaEficiencia
+		lineageTag: 23deb522-e4cf-42a3-8c85-6ea380f10918
+
+	measure 'Valor Pedidos Total Periodo v2' = ```
+			CALCULATE(sum(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRPRODUTOTOTAL]), 
+			USERELATIONSHIP(Calendario2[Date],DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]))
+			```
+		displayFolder: _TelaEficiencia
+		lineageTag: 5a5804e6-4a9a-4ef1-9599-476f09174775
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition _medidas = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Coluna 1" = _t]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"Coluna 1", type text}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"Coluna 1"})
+				in
+				    #"Colunas Removidas"
+
+	annotation PBI_ResultType = Table
+

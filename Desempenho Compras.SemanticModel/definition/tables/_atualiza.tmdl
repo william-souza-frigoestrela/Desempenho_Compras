@@ -1,0 +1,27 @@
+table _atualiza
+	lineageTag: a779ae2d-ff95-4146-80e3-bdbcd5ef3edc
+
+	column att
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1393ab56-7fee-4d71-ba83-f6c0aaf6075d
+		summarizeBy: none
+		sourceColumn: att
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _atualiza = m
+		mode: import
+		source =
+				let
+				    Fonte = DateTimeZone.UtcNow(),
+				    #"Convertido para Tabela" = #table(1, {{Fonte}}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Convertido para Tabela",{{"Column1", "att"}}),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Colunas Renomeadas",{{"att", type datetime}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

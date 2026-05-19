@@ -1,0 +1,17 @@
+table Compradores
+	lineageTag: aee86879-c25d-41a4-8c25-9b6d4aaf754b
+
+	column NOME
+		lineageTag: 11baea89-107e-4d12-a957-d8710426f06d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO[NOME]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Compradores = calculated
+		mode: import
+		source = SUMMARIZE(DCEVPB_SOLICITACAOTEMPOAPROVACAO,DCEVPB_SOLICITACAOTEMPOAPROVACAO[NOME])
+
+	annotation PBI_Id = 84f0c39c27134d12bc37ba365979929d
+

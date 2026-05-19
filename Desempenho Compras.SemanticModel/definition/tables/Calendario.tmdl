@@ -1,0 +1,100 @@
+table Calendario
+	lineageTag: 7f2f0e0e-44b2-4744-b07e-7b0eddc49863
+
+	column Date
+		formatString: General Date
+		lineageTag: d0a08429-f021-44ba-a841-87453ef4ab5d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ano
+		formatString: 0
+		lineageTag: e5a65ac5-6b60-490e-9596-ab4efa7abf6f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Ano]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		formatString: 0
+		lineageTag: 4cc804df-deda-4d5e-b79c-e9b86e11c4b4
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Mes]
+
+		annotation SummarizationSetBy = Automatic
+
+	column NomeMes
+		lineageTag: 3e5873f9-bd9d-4c2e-9049-4ca5188e0b82
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [NomeMes]
+		sortByColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column AnoMes
+		lineageTag: 75a3ea1e-f09b-4bb2-bb40-6e72bd04cb5b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [AnoMes]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dia
+		formatString: 0
+		lineageTag: 5419209a-d81d-43dd-a41c-7b05bd555c2e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Dia]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiaSemana
+		formatString: 0
+		lineageTag: 32c1fc92-36c0-4eeb-8036-41ee263d43ff
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [DiaSemana]
+
+		annotation SummarizationSetBy = Automatic
+
+	column NomeDiaSemana
+		lineageTag: b2ba43dc-0bb3-4656-9958-0c4e9841a48c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [NomeDiaSemana]
+
+		annotation SummarizationSetBy = Automatic
+
+	column nomeMES_upper = UPPER(Calendario[NomeMes])
+		lineageTag: 95dc7da1-676e-49b8-a5b9-f9611df81324
+		summarizeBy: none
+		sortByColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendario = calculated
+		mode: import
+		source =
+				
+				ADDCOLUMNS(
+				    CALENDAR(
+				        DATE(2023,1,1),          -- data inicial
+				        DATE(2099,12,31)         -- data final (ajuste conforme sua base)
+				    ),
+				    "Ano", YEAR([Date]),
+				    "Mes", MONTH([Date]),
+				    "NomeMes", FORMAT([Date], "mmmm"),
+				    "AnoMes", FORMAT([Date], "YYYY-MM"),
+				    "Dia", DAY([Date]),
+				    "DiaSemana", WEEKDAY([Date], 2),           -- 2 = segunda como primeiro dia da semana
+				    "NomeDiaSemana", FORMAT([Date], "dddd")
+				)
+
+	annotation PBI_Id = 5a4c8df1ccf2429f8fbbd1da0ed58ecf
+

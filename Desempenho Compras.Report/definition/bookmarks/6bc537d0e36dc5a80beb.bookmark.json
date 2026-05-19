@@ -1,0 +1,1353 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "comFiltros GASTOS",
+  "name": "6bc537d0e36dc5a80beb",
+  "options": {
+    "targetVisualNames": [],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "6afe9732dd2eb7ce094b",
+    "filters": {
+      "byName": {
+        "605c2af06a44b38d0065": {
+          "name": "605c2af06a44b38d0065",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "d",
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "NOME"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'GUSTAVO MOLINA MATSUMOTO'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'SAMANTA DONDA DE SOUZA BAUAB'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'SOLICITAÇÃO SIMPLIFICADA'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                }
+              },
+              "Property": "NOME"
+            }
+          },
+          "howCreated": 1
+        },
+        "e735eb77d2c1cac21c4e": {
+          "name": "e735eb77d2c1cac21c4e",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "d",
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "GRUPO"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'BOVINOS'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'SUINOS'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'INDUSTRIALIZADOS'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'INSUMOS AGROPECUARIOS'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'FABRICA DE RACAO'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                }
+              },
+              "Property": "GRUPO"
+            }
+          },
+          "howCreated": 1
+        }
+      }
+    },
+    "sections": {
+      "6afe9732dd2eb7ce094b": {
+        "filters": {
+          "byExpr": [
+            {
+              "name": "624415d4e2100470a5b0",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                    }
+                  },
+                  "Property": "Status Data"
+                }
+              },
+              "howCreated": 1
+            }
+          ]
+        },
+        "visualContainers": {
+          "f3d09009992380d604e3": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "177ea1ad16e0f053f21e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Valor Pedidos Total Periodo 25"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a12e829a86ae786d7e35",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "nomeMES/ano"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "areaChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "nomeMES/ano"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a7e9554b0c63306745db": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f7777b0110a7c9809bf0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "Prioridade"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a7f791b186cd0614bff6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Valor Pedidos Total Periodo"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Valor Pedidos Total Periodo"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "Prioridade"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "cd4c8d2512507c08ec99": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f314c769ec6ef879b98f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Valor Pedidos Total Periodo 26"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1b4ea15b60669dad750c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "nomeMES/ano"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "areaChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "nomeMES/ano"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b7f369138402653d0d5a": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "487b5e099ef56ff45973",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Eficiência ( itensSolicitados vs itensEntregues)"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Eficiência ( itensSolicitados vs itensEntregues)"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "21cfb03539581e64e825": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ced91069c25048192e43",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Tempo Médio (Aprovação x Pedido)"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "3fa36bcac51146d090de": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "30e4ae5bac14b802c670",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Valor Pedidos Total Periodo"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Valor Pedidos Total Periodo"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "4be21a5ae73d35d0cdd1": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b0c746889c5401122c59",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Valor Pedidos Total Periodo 25"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Valor Pedidos Total Periodo 25"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "57a6f55a429b6468a978": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "1da87628d291e3129319",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Valor Pedidos Total Periodo 26"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Valor Pedidos Total Periodo 26"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "a29ab324e51a31cc0e05": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "11f4c0ff8782a954a90f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "seqDescProd"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c70e5d2df209c47b1a49",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DADOS_EMPRESA"
+                        }
+                      },
+                      "Property": "NOMEREDUZIDO"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5309ed135fd2a1acb66c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Valor Pedidos Total Periodo 25"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f32a1c3cdf25df40862a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Valor Pedidos Total Periodo 26"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6e132bdebb082d630fff",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "seqNomeForn"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "305c0ab54e15aca23895",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_medidas"
+                        }
+                      },
+                      "Property": "Valor Pedidos Total Periodo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "13179e9dcd79c7558aa6",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "NROPEDIDO"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DADOS_EMPRESA"
+                        }
+                      },
+                      "Property": "NOMEREDUZIDO"
+                    }
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Rows"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "DADOS_EMPRESA.NOMEREDUZIDO"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "DADOS_EMPRESA"
+                              }
+                            },
+                            "Property": "NOMEREDUZIDO"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "DCEVPB_SOLICITACAOTEMPOAPROVACAO.seqNomeForn"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                              }
+                            },
+                            "Property": "seqNomeForn"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "DCEVPB_SOLICITACAOTEMPOAPROVACAO.NROPEDIDO"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                              }
+                            },
+                            "Property": "NROPEDIDO"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "DCEVPB_SOLICITACAOTEMPOAPROVACAO.seqDescProd"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ]
+            }
+          },
+          "e11cbd9ce9a434bd9d5a": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b1f6d79d0c2e43dd29c3",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Compradores"
+                        }
+                      },
+                      "Property": "NOME"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Compradores"
+                        }
+                      },
+                      "Property": "NOME"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "748382ead6172a4a253d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "77c7a90c2a4836a41a66",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "GRUPO"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2a36f71ae0e7f0078803",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "DESCRICAO"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e2e8eaccca7421b5479e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "SUBGRUPO"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "GRUPO"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "SUBGRUPO"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "DESCRICAO"
+                    }
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Values"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "DCEVPB_SOLICITACAOTEMPOAPROVACAO.GRUPO"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                              }
+                            },
+                            "Property": "GRUPO"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "DCEVPB_SOLICITACAOTEMPOAPROVACAO.SUBGRUPO"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                              }
+                            },
+                            "Property": "SUBGRUPO"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DESCRICAO"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null,
+                    "children": [
+                      {
+                        "identityValues": [
+                          {
+                            "Literal": {
+                              "Value": "'ACESSORIOS'"
+                            }
+                          }
+                        ],
+                        "isToggled": true,
+                        "children": [
+                          {
+                            "identityValues": [
+                              {
+                                "Literal": {
+                                  "Value": "'ACESSORIOS'"
+                                }
+                              }
+                            ],
+                            "isToggled": true
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "2734cf945eb4a4c200b0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e8ef6d49568e6eff95e7",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "statusTXT"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "statusTXT"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "0695d4696cecac73798a": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b276ea8c712a3c813df4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "NROSOLICITACAO"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "NROSOLICITACAO"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "72253062d03333ea23cc": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "633cbebf0b2f9ab3172b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DADOS_EMPRESA"
+                        }
+                      },
+                      "Property": "NOMEREDUZIDO"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DADOS_EMPRESA"
+                        }
+                      },
+                      "Property": "NOMEREDUZIDO"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "961d5c7f58d37a004112": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "412c28df6a1fb366e676",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "Prioridade"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "Prioridade"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b8ae2a109c3293d88ae9": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "53932880e794c4897286": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "366c9d5b0068c57110e7": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "3e3b4381f8988abaf1c5",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Between'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario2"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "983bc4ba8d18674068ba": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "9dfafeea76099e567ab3": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "9beb2dd219010a4a500c": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          }
+        },
+        "visualContainerGroups": {
+          "de7caf7c7a3a8208d094": {
+            "isHidden": false
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

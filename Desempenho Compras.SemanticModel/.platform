@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Desempenho Compras"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "87cdfa69-5e7b-43db-a899-3060b30a6a6e"
+  }
+}

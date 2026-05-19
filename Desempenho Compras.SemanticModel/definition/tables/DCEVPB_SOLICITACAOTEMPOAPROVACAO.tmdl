@@ -1,0 +1,440 @@
+table DCEVPB_SOLICITACAOTEMPOAPROVACAO
+	lineageTag: 1b78f30f-b37b-4e41-8a35-ec5099e60e9f
+
+	column NROEMPRESA
+		dataType: int64
+		formatString: 0
+		lineageTag: 31ee3160-d3f4-4b4d-acef-9d570da97d47
+		summarizeBy: none
+		sourceColumn: NROEMPRESA
+
+		changedProperty = DataType
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column NROSOLICITACAO
+		dataType: string
+		lineageTag: 401cb9c5-09a3-42bc-9913-6ecc991c08c2
+		summarizeBy: none
+		sourceColumn: NROSOLICITACAO
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column DTASOLICITACAO
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 548dbbcc-9efc-4bd7-b0d3-84bae405739a
+		summarizeBy: none
+		sourceColumn: DTASOLICITACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS
+		dataType: int64
+		lineageTag: f99e4e2a-ab8d-4e92-ab32-f986b12e2d89
+		summarizeBy: sum
+		sourceColumn: STATUS
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SEQSOLICITANTE
+		dataType: double
+		lineageTag: e4a9bb79-1433-4bc7-92f6-eaccf93fd344
+		summarizeBy: none
+		sourceColumn: SEQSOLICITANTE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CODTIPOCOTACAO
+		dataType: double
+		lineageTag: 4ab84690-cef5-4871-b89e-08aafd8ccd7f
+		summarizeBy: sum
+		sourceColumn: CODTIPOCOTACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SEQPRODUTO
+		dataType: int64
+		lineageTag: a02f8c5e-8736-4713-aec0-02e6ba6f107d
+		summarizeBy: sum
+		sourceColumn: SEQPRODUTO
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SEQCOTACAO
+		dataType: double
+		lineageTag: 2f26a7c5-369c-4466-86f6-48950ba42a91
+		summarizeBy: sum
+		sourceColumn: SEQCOTACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DTAAPROVACAOPEDIDO
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9cb74c07-e4a9-4e6a-8522-9c34aa73bdc7
+		summarizeBy: none
+		sourceColumn: DTAAPROVACAOPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NROPEDIDO
+		dataType: string
+		lineageTag: 54c57172-1f15-4f31-8cff-a5f25d3d84c8
+		summarizeBy: none
+		sourceColumn: NROPEDIDO
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRIMEIRA
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1a552e1c-e4ff-46b5-82e0-96cff4fbaa32
+		summarizeBy: none
+		sourceColumn: PRIMEIRA
+
+		annotation SummarizationSetBy = Automatic
+
+	column TEMPO
+		dataType: string
+		lineageTag: a1d4138a-2a9e-48a0-a18c-a9ba5919f911
+		summarizeBy: none
+		sourceColumn: TEMPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column statusTXT =
+			SWITCH(DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUS],
+			3, "SOLICITAÇÃO APROVADA",
+			4, "COTAÇÃO PRÉ-APROVADA",
+			5, "COTAÇÃO APROVADA"
+			)
+		lineageTag: b591375b-61d1-4896-a4d1-51541e88283d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column SOLIAPROVACAO
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: df487397-d687-4e79-947e-464297854378
+		summarizeBy: none
+		sourceColumn: SOLIAPROVACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DTAEMISSAO
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 848a9499-5173-4a2c-97dd-28a5ad2db4c5
+		summarizeBy: none
+		sourceColumn: DTAEMISSAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATAHORAPEDIDO
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c7560f07-1b07-4370-98cc-424f753b26ad
+		summarizeBy: none
+		sourceColumn: DATAHORAPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME
+		dataType: string
+		lineageTag: 2c0fcba0-0017-40d0-8d54-5944a33737da
+		summarizeBy: none
+		sourceColumn: NOME
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tempo_Fechamento_Horas =
+			
+			VAR inicio = 'DCEVPB_SOLICITACAOTEMPOAPROVACAO'[SOLIAPROVACAO]
+			VAR fim = 'DCEVPB_SOLICITACAOTEMPOAPROVACAO'[DATAHORAPEDIDO]
+			RETURN
+			IF(
+			    ISBLANK(inicio) || ISBLANK(fim),
+			    BLANK(),
+			    IF(
+			        fim >= inicio,
+			        DIVIDE(DATEDIFF(inicio, fim, MINUTE), 60.0),
+			        BLANK()   -- evita valores negativos se a data estiver invertida
+			    )
+			)
+		formatString: 0
+		lineageTag: bb085e5b-5930-43e9-aeed-66f90f445847
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRICAO
+		dataType: string
+		lineageTag: 99f502d5-8b0f-4627-af2e-d24723235d6a
+		summarizeBy: none
+		sourceColumn: DESCRICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column seqDescProd = DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]& " - "& DCEVPB_SOLICITACAOTEMPOAPROVACAO[DESCRICAO]
+		lineageTag: 134216fb-b1a1-4716-b7a9-30e1cf641b24
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column PK = format( DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROEMPRESA],"000") & " - " & format( DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROSOLICITACAO],"0000000")
+		dataType: string
+		lineageTag: 3c8566a5-3dd4-4a0f-b086-9699cb2692c8
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pk Pedido' = format( DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROEMPRESA],"000") & "-" & format( DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROPEDIDO],"0000000")
+		lineageTag: 9c3a025c-00c4-488d-9341-62cadac6758e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column GRUPOPROD
+		dataType: double
+		lineageTag: 70304d39-879a-4afd-a3fc-c2cfaa2fe188
+		summarizeBy: sum
+		sourceColumn: GRUPOPROD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GRUPO
+		dataType: string
+		lineageTag: 0afcf708-3498-4214-8fb5-16926b0d389c
+		summarizeBy: none
+		sourceColumn: GRUPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBGRUPOPROD
+		dataType: double
+		lineageTag: e8674a56-b7d3-43ca-838c-ea1a1ca2512b
+		summarizeBy: sum
+		sourceColumn: SUBGRUPOPROD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SUBGRUPO
+		dataType: string
+		lineageTag: 7d9195e7-707c-42e2-a4ca-9b5a9aecc58f
+		summarizeBy: none
+		sourceColumn: SUBGRUPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column VLRUNITARIO
+		dataType: double
+		lineageTag: f28e06e4-0942-47aa-90a9-f56c4e2c69a5
+		summarizeBy: sum
+		sourceColumn: VLRUNITARIO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QUANTIDADE
+		dataType: double
+		lineageTag: 2a124c33-0cd9-4ac3-9379-94c9fae68e29
+		summarizeBy: sum
+		sourceColumn: QUANTIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLRPRODUTO
+		dataType: double
+		lineageTag: a0247e80-ca5c-4f0d-b64f-c5e56541f502
+		summarizeBy: sum
+		sourceColumn: VLRPRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SEQPEDIDOITEM
+		dataType: double
+		lineageTag: eb59bb45-b736-435b-a24e-866838428524
+		summarizeBy: sum
+		sourceColumn: SEQPEDIDOITEM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PK_Item = format( DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROEMPRESA],"000" & " - " & format(DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROSOLICITACAO],"0000000") & " - " & format(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO],"0000000"))
+		lineageTag: 9dcff7a6-f6fb-4e3f-adcc-8785ca95e1cc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEQFORNECEDOR
+		dataType: double
+		lineageTag: ff68feca-bd8d-4781-9f5e-ca612d647143
+		summarizeBy: sum
+		sourceColumn: SEQFORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FORNECEDOR
+		dataType: string
+		lineageTag: 19bd1a11-011f-4f41-99e6-4645f7ba26c3
+		summarizeBy: none
+		sourceColumn: FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column VLRPRODUTOTOTAL
+		dataType: double
+		lineageTag: e8b558f6-8427-4a03-9e5f-f6f02e1696e7
+		summarizeBy: sum
+		sourceColumn: VLRPRODUTOTOTAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COD_PRIORIDADE
+		dataType: double
+		lineageTag: c05f300e-500e-45fa-8acd-b195dd9cec41
+		summarizeBy: sum
+		sourceColumn: COD_PRIORIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Prioridade =
+			
+			SWITCH(DCEVPB_SOLICITACAOTEMPOAPROVACAO[COD_PRIORIDADE],
+			        1,"Urgente",
+			        2,"Programada",
+			        3,"Moderada",
+			        4,"Normal",
+			        5,"Retroativa",
+			"Verificar")
+		lineageTag: 244591ca-01c7-43ea-bc35-eef0b59bef6b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column SOLICITANTE
+		dataType: string
+		lineageTag: ee137490-7cf9-4211-a942-781675bbe430
+		summarizeBy: none
+		sourceColumn: SOLICITANTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Solicitação' = ```
+			
+			var vr1 = 
+			SWITCH(DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUS],
+			3, "SOLICITAÇÃO APROVADA",
+			4, "COTAÇÃO PRÉ-APROVADA",
+			5, "COTAÇÃO APROVADA"
+			)
+			
+			var vr2 = "SIMPLIFICADA"
+			
+			RETURN 
+			
+			IF(DCEVPB_SOLICITACAOTEMPOAPROVACAO[NOME] = "SOLICITAÇÃO SIMPLIFICADA",vr2,VR1)
+			```
+		lineageTag: a33a68db-5613-44c2-804f-24cfd86fa54c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTDSOLICITADA
+		dataType: double
+		lineageTag: aa1b2ab2-c781-40cc-91ff-a5acd388179b
+		summarizeBy: sum
+		sourceColumn: QTDSOLICITADA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UNIDADE
+		dataType: string
+		lineageTag: b24791a8-4ec4-46f3-ac73-cf4822f04e33
+		summarizeBy: none
+		sourceColumn: UNIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBSERVACAO
+		dataType: string
+		lineageTag: 6aabb207-c9da-42bf-9df5-eeff871566a8
+		summarizeBy: none
+		sourceColumn: OBSERVACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column seqNomeForn = DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQFORNECEDOR] & " - " & DCEVPB_SOLICITACAOTEMPOAPROVACAO[FORNECEDOR]
+		lineageTag: c8056817-530b-4a68-ab93-e6e0de8b4178
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Data' =
+			
+			IF(
+			    DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO] <= TODAY(),
+			    "OK",
+			    "Futuro"
+			)
+		lineageTag: bfb53947-2acf-49e9-a4f5-d81c441c2fcd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DCEVPB_SOLICITACAOTEMPOAPROVACAO = m
+		mode: import
+		source =
+				let
+				    Fonte = Oracle.Database("datavale", [HierarchicalNavigation=true]),
+				    DATAVALE = Fonte{[Schema="DATAVALE"]}[Data],
+				    DCEVPB_SOLICITACAOTEMPOAPROVACAO1 = DATAVALE{[Name="DCEVPB_SOLICITACAOTEMPOAPROVACAO"]}[Data]
+				in
+				    DCEVPB_SOLICITACAOTEMPOAPROVACAO1
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegação
+
