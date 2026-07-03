@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "cd4c8d2512507c08ec99",
   "position": {
     "x": 665.28,
@@ -17,17 +17,54 @@
           "projections": [
             {
               "field": {
-                "Column": {
+                "HierarchyLevel": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "Calendario2"
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "DATAHORAPEDIDO"
+                        }
+                      },
+                      "Hierarchy": "Hierarquia de datas"
                     }
                   },
-                  "Property": "nomeMES/ano"
+                  "Level": "Ano"
                 }
               },
-              "queryRef": "Calendario2.nomeMES/ano",
-              "nativeQueryRef": "nomeMES/ano",
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DATAHORAPEDIDO.Variation.Hierarquia de datas.Ano",
+              "nativeQueryRef": "DATAHORAPEDIDO Ano",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "DATAHORAPEDIDO"
+                        }
+                      },
+                      "Hierarchy": "Hierarquia de datas"
+                    }
+                  },
+                  "Level": "Mês"
+                }
+              },
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DATAHORAPEDIDO.Variation.Hierarquia de datas.Mês",
+              "nativeQueryRef": "DATAHORAPEDIDO Mês",
               "active": true
             }
           ]

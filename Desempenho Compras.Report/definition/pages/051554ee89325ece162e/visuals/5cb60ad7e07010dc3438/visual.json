@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "3db4771ad902b23c1b10",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "5cb60ad7e07010dc3438",
   "position": {
-    "x": 996.989914662529,
-    "y": 1.8019810106541377E-52,
-    "z": 0,
-    "height": 94.5863453815261,
-    "width": 244.69076305220884,
-    "tabOrder": 0
+    "x": 569.34266711113219,
+    "y": 14.93404447830849,
+    "z": 2500,
+    "height": 91.067193675889328,
+    "width": 216.53754940711462,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,15 +20,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Calendario2"
+                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                     }
                   },
-                  "Property": "Date"
+                  "Property": "DTASOLICITACAO"
                 }
               },
-              "queryRef": "Calendario2.Date",
-              "nativeQueryRef": "Date",
-              "active": true
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTASOLICITACAO",
+              "nativeQueryRef": "Data Solicitação",
+              "active": true,
+              "displayName": "Data Solicitação"
             }
           ]
         }
@@ -40,10 +41,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Calendario2"
+                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                   }
                 },
-                "Property": "Date"
+                "Property": "DTASOLICITACAO"
               }
             },
             "direction": "Ascending"
@@ -56,20 +57,6 @@
       "data": [
         {
           "properties": {
-            "startDate": {
-              "expr": {
-                "Literal": {
-                  "Value": "datetime'2026-04-10T00:00:00'"
-                }
-              }
-            },
-            "endDate": {
-              "expr": {
-                "Literal": {
-                  "Value": "datetime'2026-04-10T00:00:00'"
-                }
-              }
-            },
             "mode": {
               "expr": {
                 "Literal": {
@@ -82,68 +69,7 @@
       ],
       "general": [
         {
-          "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "c",
-                    "Entity": "Calendario2",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "And": {
-                        "Left": {
-                          "Comparison": {
-                            "ComparisonKind": 2,
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "c"
-                                  }
-                                },
-                                "Property": "Date"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "datetime'2026-04-10T00:00:00'"
-                              }
-                            }
-                          }
-                        },
-                        "Right": {
-                          "Comparison": {
-                            "ComparisonKind": 3,
-                            "Left": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "c"
-                                  }
-                                },
-                                "Property": "Date"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "datetime'2026-04-11T00:00:00'"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "selection": [
@@ -287,11 +213,7 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "Date",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "parentGroupName": "508fa88600e7c60661c7"
 }

@@ -478,23 +478,6 @@ table _medidas
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
-	measure 'Pedidos Gerados no Período v2' =
-			
-			CALCULATE(DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[Pk Pedido]),
-			USERELATIONSHIP(Calendario2[Date],DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]))
-		formatString: 0
-		displayFolder: _TelaEficiencia
-		lineageTag: 23deb522-e4cf-42a3-8c85-6ea380f10918
-
-	measure 'Valor Pedidos Total Periodo v2' = ```
-			CALCULATE(sum(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRPRODUTOTOTAL]), 
-			USERELATIONSHIP(Calendario2[Date],DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]))
-			```
-		displayFolder: _TelaEficiencia
-		lineageTag: 5a5804e6-4a9a-4ef1-9599-476f09174775
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	partition _medidas = m
 		mode: import
 		source =

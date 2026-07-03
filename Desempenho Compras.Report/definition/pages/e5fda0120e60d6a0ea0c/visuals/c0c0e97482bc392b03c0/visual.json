@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "c0c0e97482bc392b03c0",
   "position": {
     "x": 39.836199836199839,
     "y": 115.31531531531532,
-    "z": 1000,
+    "z": 0,
     "height": 552.46519246519244,
     "width": 1201.3759213759215,
-    "tabOrder": 1000
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "pivotTable",
@@ -220,11 +220,12 @@
                       "Entity": "_medidas"
                     }
                   },
-                  "Property": "Pedidos Gerados no Período v2"
+                  "Property": "Pedidos Gerados no Período"
                 }
               },
-              "queryRef": "_medidas.Pedidos Gerados no Período v2",
-              "nativeQueryRef": "Pedidos Gerados no Período v2"
+              "queryRef": "_medidas.PedidosGerados",
+              "nativeQueryRef": "Ped Gerados no Período",
+              "displayName": "Ped Gerados no Período"
             },
             {
               "field": {
@@ -239,20 +240,6 @@
               },
               "queryRef": "_medidas.Valor Pedidos Total Periodo",
               "nativeQueryRef": "Valor Pedidos Total Periodo"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_medidas"
-                    }
-                  },
-                  "Property": "Valor Pedidos Total Periodo v2"
-                }
-              },
-              "queryRef": "_medidas.Valor Pedidos Total Periodo v2",
-              "nativeQueryRef": "Valor Pedidos Total Periodo v2"
             },
             {
               "field": {
@@ -297,6 +284,32 @@
                   }
                 },
                 "Property": "NOME"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DADOS_EMPRESA"
+                  }
+                },
+                "Property": "NOMEREDUZIDO"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                  }
+                },
+                "Property": "statusTXT"
               }
             },
             "direction": "Ascending"
@@ -454,6 +467,135 @@
                   "isToggled": true
                 }
               ]
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'LUCAS GABRIEL ALMENDRO DA SILVA'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'072-OESTE GRAX'"
+                      }
+                    }
+                  ],
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'SOLICITAÇÃO APROVADA'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'LUDMILA KAUANE CORTEZ DA SILVA'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'012-FRIG.ROND.'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                },
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'002-FRIG.CARNE'"
+                      }
+                    }
+                  ],
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'COTAÇÃO PRÉ-APROVADA'"
+                          }
+                        }
+                      ],
+                      "isToggled": true,
+                      "children": [
+                        {
+                          "identityValues": [
+                            {
+                              "Literal": {
+                                "Value": "'143635'"
+                              }
+                            }
+                          ],
+                          "children": [
+                            {
+                              "identityValues": [
+                                {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              ],
+                              "children": [
+                                {
+                                  "identityValues": [
+                                    {
+                                      "Literal": {
+                                        "Value": "'MANUTENCAO EM CARRINHO HIDRAUL'"
+                                      }
+                                    }
+                                  ],
+                                  "isToggled": true
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "identityValues": [
+                            {
+                              "Literal": {
+                                "Value": "'143636'"
+                              }
+                            }
+                          ],
+                          "children": [
+                            {
+                              "identityValues": [
+                                {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              ],
+                              "isToggled": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -543,6 +685,20 @@
           },
           "selector": {
             "metadata": "_medidas.Quantidade De Solicitações Geradas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "98.15761840556218D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_medidas.PedidosGerados"
           }
         },
         {

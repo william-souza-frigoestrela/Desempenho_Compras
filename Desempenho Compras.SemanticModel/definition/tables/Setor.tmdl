@@ -30,7 +30,7 @@ table Setor
 		mode: import
 		source =
 				let
-				    Fonte = Oracle.Database("TOTVS_RM", [HierarchicalNavigation=true, Query="SELECT E.SEQPESSOADTV,D.DEPARTAMENTO,D.SETOR#(lf)  FROM EST_DEPARAPESSOA E#(lf)  LEFT JOIN PFUNC F#(lf)    ON E.CODCOLIGADA = F.CODCOLIGADA#(lf)   AND E.CHAPA = F.CHAPA#(lf)  LEFT JOIN FPBI_DEPARTAMENTO D#(lf)  ON F.CODSECAO = D.CODIGO#(lf)"])
+				    Fonte = Oracle.Database("RM", [HierarchicalNavigation=true, Query="SELECT E.SEQPESSOADTV,D.DEPARTAMENTO,D.SETOR#(lf)  FROM EST_DEPARAPESSOA E#(lf)  LEFT JOIN PFUNC F#(lf)    ON E.CODCOLIGADA = F.CODCOLIGADA#(lf)   AND E.CHAPA = F.CHAPA#(lf)  LEFT JOIN FPBI_DEPARTAMENTO D#(lf)  ON F.CODSECAO = D.CODIGO#(lf)"])
 				in
 				    Fonte
 

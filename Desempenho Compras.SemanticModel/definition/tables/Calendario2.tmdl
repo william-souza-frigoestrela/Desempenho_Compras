@@ -1,12 +1,28 @@
 table Calendario2
 	lineageTag: 25bbbd38-e652-4981-96f7-9a26f8f75054
 
+	measure teste = ```
+			
+			CALCULATE(
+			    SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRPRODUTOTOTAL]), 
+			    DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO] >= DATE(2025,1,1) &&
+			    DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO] <= DATE(2025,1,31)
+			)
+			```
+		formatString: #,0
+		lineageTag: c8535743-14ab-4050-bf65-1ce83079122c
+
 	column Date
 		formatString: General Date
 		lineageTag: 14d0bcfe-2734-4bbb-9d01-a155c18e4703
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: d1f9b59e-32a8-4c8a-859e-66fa2ea6e47b
+			defaultHierarchy: LocalDateTable_b4d7765b-26cc-42e7-9cb7-9682ef911fd1.'Hierarquia de datas'
 
 		annotation SummarizationSetBy = Automatic
 

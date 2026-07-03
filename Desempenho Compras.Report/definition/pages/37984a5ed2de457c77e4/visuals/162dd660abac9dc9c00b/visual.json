@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "2995b2bc80c8d2577245",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "162dd660abac9dc9c00b",
   "position": {
-    "x": 294.52989352989385,
-    "y": 19.966420439540943,
-    "z": 5000,
-    "height": 61.850941850941851,
-    "width": 193.93939393939394,
-    "tabOrder": 5000
+    "x": 180.78930742733783,
+    "y": 12.910329063288728,
+    "z": 4000,
+    "height": 61.723320158102766,
+    "width": 194.27667984189722,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "slicer",
@@ -43,6 +43,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Dropdown'"
+                }
+              }
+            },
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -153,5 +160,6 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "parentGroupName": "5e675420a77e7b190ca0"
 }

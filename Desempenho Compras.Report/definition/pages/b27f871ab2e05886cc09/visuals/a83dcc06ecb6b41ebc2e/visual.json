@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "a83dcc06ecb6b41ebc2e",
   "position": {
     "x": 151.7579721995094,
@@ -93,8 +93,7 @@
                 }
               },
               "index": 0,
-              "length": 4,
-              "sortDirection": "Ascending"
+              "length": 4
             }
           ]
         },
@@ -197,55 +196,16 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                    "Entity": "_medidas"
                   }
                 },
-                "Property": "NOME"
+                "Property": "Solicitações Criadas no Período"
               }
             },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                  }
-                },
-                "Property": "statusTXT"
-              }
-            },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                  }
-                },
-                "Property": "NROSOLICITACAO"
-              }
-            },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "DADOS_EMPRESA"
-                  }
-                },
-                "Property": "NOMEREDUZIDO"
-              }
-            },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
@@ -279,109 +239,22 @@
             "queryRefs": [
               "DCEVPB_SOLICITACAOTEMPOAPROVACAO.statusTXT"
             ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                    }
-                  },
-                  "Property": "statusTXT"
-                }
-              }
-            ],
-            "isPinned": true
+            "isCollapsed": true
           },
           {
             "queryRefs": [
               "DCEVPB_SOLICITACAOTEMPOAPROVACAO.NROSOLICITACAO"
             ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                    }
-                  },
-                  "Property": "NROSOLICITACAO"
-                }
-              }
-            ],
-            "isPinned": true
+            "isCollapsed": true
           },
           {
             "queryRefs": [
               "DADOS_EMPRESA.NOMEREDUZIDO"
             ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DADOS_EMPRESA"
-                    }
-                  },
-                  "Property": "NOMEREDUZIDO"
-                }
-              }
-            ],
-            "isPinned": true
+            "isCollapsed": true
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'HEITOR DESLANDES GARCIA MARANGONI'"
-                  }
-                }
-              ],
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'COTAÇÃO APROVADA'"
-                      }
-                    }
-                  ],
-                  "isToggled": true,
-                  "children": [
-                    {
-                      "identityValues": [
-                        {
-                          "Literal": {
-                            "Value": "'1049'"
-                          }
-                        }
-                      ],
-                      "isToggled": true,
-                      "children": [
-                        {
-                          "identityValues": [
-                            {
-                              "Literal": {
-                                "Value": "'029-FRIG.C.C.RP'"
-                              }
-                            }
-                          ],
-                          "isToggled": true
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
+        "root": {}
       }
     ],
     "objects": {

@@ -8,6 +8,11 @@ table _atualiza
 		summarizeBy: none
 		sourceColumn: att
 
+		variation Variation
+			isDefault
+			relationship: 798822a4-6a4c-4ef7-a4fb-879d49c1ba2e
+			defaultHierarchy: LocalDateTable_73ab2ed9-db0f-4fa3-9968-a07ed6419296.'Hierarquia de datas'
+
 		annotation SummarizationSetBy = Automatic
 
 	partition _atualiza = m

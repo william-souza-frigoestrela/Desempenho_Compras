@@ -8,6 +8,11 @@ table Calendario
 		isNameInferred
 		sourceColumn: [Date]
 
+		variation Variation
+			isDefault
+			relationship: e5772669-204d-401a-964a-3c494b9e7232
+			defaultHierarchy: LocalDateTable_9f86e393-37ba-44f9-beae-65e57dfbaab8.'Hierarquia de datas'
+
 		annotation SummarizationSetBy = Automatic
 
 	column Ano

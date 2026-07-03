@@ -8,19 +8,28 @@ model Model
 
 annotation PBI_QueryOrder = ["DCEVPB_SOLICITACAOTEMPOAPROVACAO","_medidas","_atualiza","DADOS_EMPRESA","Setor"]
 
-annotation __PBI_TimeIntelligenceEnabled = 0
+annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table DCEVPB_SOLICITACAOTEMPOAPROVACAO
+ref table DateTableTemplate_7326d91e-ea71-402a-8220-fdf7966be88a
+ref table LocalDateTable_2a496219-74f6-49d0-a4e9-88be3359fcfe
+ref table LocalDateTable_3ae13e4c-5d0e-483f-9afb-d4b965e59bf6
+ref table LocalDateTable_eec0d6d8-d7e7-444a-805e-c776ffa55bd1
+ref table LocalDateTable_7b144d36-6779-410f-becd-fc27b42b020c
+ref table LocalDateTable_bb851fa5-f79f-4da0-bbf6-f752590a42f0
 ref table _medidas
 ref table Calendario
+ref table LocalDateTable_9f86e393-37ba-44f9-beae-65e57dfbaab8
 ref table _atualiza
+ref table LocalDateTable_73ab2ed9-db0f-4fa3-9968-a07ed6419296
 ref table DADOS_EMPRESA
 ref table Calendario2
 ref table Compradores
 ref table Parâmetro
 ref table Setor
+ref table LocalDateTable_b4d7765b-26cc-42e7-9cb7-9682ef911fd1
 
 ref cultureInfo pt-BR
 
