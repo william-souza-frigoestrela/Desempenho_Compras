@@ -499,6 +499,14 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 		annotation SummarizationSetBy = Automatic
 
+	column MARCASOLICITADA
+		dataType: string
+		lineageTag: 3b438fac-898d-4c14-a515-d454ad06cb81
+		summarizeBy: none
+		sourceColumn: MARCASOLICITADA
+
+		annotation SummarizationSetBy = Automatic
+
 	partition DCEVPB_SOLICITACAOTEMPOAPROVACAO = m
 		mode: import
 		source =
@@ -509,7 +517,7 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 				in
 				    DCEVPB_SOLICITACAOTEMPOAPROVACAO1
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 
 	annotation PBI_NavigationStepName = Navegação
 
