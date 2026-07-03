@@ -1,3 +1,42 @@
+relationship 260e9206-5e47-451e-9240-d4d5774e9bc0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTAAPROVACAOPEDIDO
+	toColumn: LocalDateTable_2a496219-74f6-49d0-a4e9-88be3359fcfe.Date
+
+relationship 6a008afd-e702-4e97-a37a-755e4938ab7c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.PRIMEIRA
+	toColumn: LocalDateTable_3ae13e4c-5d0e-483f-9afb-d4b965e59bf6.Date
+
+relationship 8f607a51-8b85-4007-af66-e22820803787
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.SOLIAPROVACAO
+	toColumn: LocalDateTable_eec0d6d8-d7e7-444a-805e-c776ffa55bd1.Date
+
+relationship 72f6d29b-9184-4b87-bc6a-a2b4955950db
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTAEMISSAO
+	toColumn: LocalDateTable_7b144d36-6779-410f-becd-fc27b42b020c.Date
+
+relationship 5a61dafc-4ac1-46d6-b208-fa63e2b1b993
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DATAHORAPEDIDO
+	toColumn: LocalDateTable_bb851fa5-f79f-4da0-bbf6-f752590a42f0.Date
+
+relationship e5772669-204d-401a-964a-3c494b9e7232
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendario.Date
+	toColumn: LocalDateTable_9f86e393-37ba-44f9-beae-65e57dfbaab8.Date
+
+relationship 2eaf685b-8f13-7845-aa05-1c5916ebfdd2
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTASOLICITACAO
+	toColumn: Calendario.Date
+
+relationship 798822a4-6a4c-4ef7-a4fb-879d49c1ba2e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _atualiza.att
+	toColumn: LocalDateTable_73ab2ed9-db0f-4fa3-9968-a07ed6419296.Date
+
 relationship AutoDetected_ba7fb79c-dff4-447a-8618-f23fbef570b4
 	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.NROEMPRESA
 	toColumn: DADOS_EMPRESA.NROEMPRESA
@@ -12,16 +51,12 @@ relationship b3204003-5a82-6480-8e61-58949597aad3
 	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.SEQSOLICITANTE
 	toColumn: Setor.SEQPESSOADTV
 
+relationship d1f9b59e-32a8-4c8a-859e-66fa2ea6e47b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendario2.Date
+	toColumn: LocalDateTable_b4d7765b-26cc-42e7-9cb7-9682ef911fd1.Date
+
 relationship 997f2226-4f63-db96-ea9f-17c18279bcb1
 	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTASOLICITACAO
-	toColumn: Calendario2.Date
-
-relationship 9f34ddc1-b163-846c-f129-1579058add4e
-	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTASOLICITACAO
-	toColumn: Calendario.Date
-
-relationship 5e5ed9ab-1c2d-250d-7c46-591f69cb1e45
-	isActive: false
-	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTAEMISSAO
 	toColumn: Calendario2.Date
 

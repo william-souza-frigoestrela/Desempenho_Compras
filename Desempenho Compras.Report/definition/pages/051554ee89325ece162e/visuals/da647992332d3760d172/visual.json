@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "696615d086ca5813b182",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "da647992332d3760d172",
   "position": {
-    "x": 682.40868140868179,
-    "y": 19.966420439540943,
-    "z": 2000,
-    "height": 61.850941850941851,
-    "width": 165.63472563472564,
-    "tabOrder": 2000
+    "x": 569.34266711113219,
+    "y": 123.20281918186581,
+    "z": 4000,
+    "height": 91.067193675889328,
+    "width": 216.53754940711462,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,49 +20,54 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DADOS_EMPRESA"
+                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                     }
                   },
-                  "Property": "NOMEREDUZIDO"
+                  "Property": "SOLIAPROVACAO"
                 }
               },
-              "queryRef": "DADOS_EMPRESA.NOMEREDUZIDO",
-              "nativeQueryRef": "Empresa",
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.SOLIAPROVACAO",
+              "nativeQueryRef": "Dta Aprovação",
               "active": true,
-              "displayName": "Empresa"
+              "displayName": "Dta Aprovação"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                  }
+                },
+                "Property": "SOLIAPROVACAO"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
       "data": [
         {
           "properties": {
-            "mode": {
+            "startDate": {
               "expr": {
                 "Literal": {
-                  "Value": "'Dropdown'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "selection": [
-        {
-          "properties": {
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "datetime'2025-08-01T00:00:00'"
                 }
               }
             },
-            "selectAllCheckboxEnabled": {
+            "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "'Between'"
                 }
               }
             }
@@ -71,11 +76,41 @@
       ],
       "general": [
         {
+          "properties": {}
+        }
+      ],
+      "selection": [
+        {
           "properties": {
-            "selfFilterEnabled": {
+            "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }
@@ -118,7 +153,7 @@
           }
         }
       ],
-      "header": [
+      "date": [
         {
           "properties": {
             "fontColor": {
@@ -138,6 +173,19 @@
       ]
     },
     "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
       "background": [
         {
           "properties": {
@@ -147,16 +195,32 @@
                   "Value": "false"
                 }
               }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
             }
           }
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "NOMEREDUZIDO",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "parentGroupName": "508fa88600e7c60661c7"
 }

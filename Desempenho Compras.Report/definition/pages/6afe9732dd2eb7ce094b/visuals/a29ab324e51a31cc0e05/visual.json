@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "a29ab324e51a31cc0e05",
   "position": {
     "x": 31.8714859437751,
@@ -131,29 +131,16 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "DADOS_EMPRESA"
+                    "Entity": "_medidas"
                   }
                 },
-                "Property": "NOMEREDUZIDO"
+                "Property": "Valor Pedidos Total Periodo"
               }
             },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                  }
-                },
-                "Property": "seqNomeForn"
-              }
-            },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }

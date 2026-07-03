@@ -89,6 +89,16 @@ cultureInfo pt-BR
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "N° Solic.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -2966,6 +2976,16 @@ cultureInfo pt-BR
 			            },
 			            "Weight": 0.599
 			          }
+			        },
+			        {
+			          "Ped Gerados no Período": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -5526,6 +5546,132 @@ cultureInfo pt-BR
 			        },
 			        {
 			          "Valor Pedidos 2026": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "calendario_2.teste": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario2",
+			          "ConceptualProperty": "teste"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "teste": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao.statusitem": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+			          "ConceptualProperty": "STATUSITEM"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "statusitem": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao.vlrpedido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+			          "ConceptualProperty": "VLRPEDIDO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vlrpedido": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao.statusITEM_txt": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+			          "ConceptualProperty": "statusITEM txt"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "statusITEM txt": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Status Item": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao.marcafornecedor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+			          "ConceptualProperty": "MARCAFORNECEDOR"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "marcafornecedor": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Marca": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao.descricaocotacao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+			          "ConceptualProperty": "DESCRICAOCOTACAO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "descricaocotacao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Desc Cotação": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -8602,6 +8748,171 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "calendarios_have_dcevpb_solicitacaotempoaprovacaos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_descricaocotacao": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "dcevpb_solicitacaotempoaprovacao.descricaocotacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao.descricaocotacao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao.descricaocotacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_descricaocotacaos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_marcafornecedor": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "dcevpb_solicitacaotempoaprovacao.marcafornecedor": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao.marcafornecedor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao.marcafornecedor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_marcafornecedors"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_statusITEM_txt": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "dcevpb_solicitacaotempoaprovacao.statusITEM_txt": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao.statusITEM_txt"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao.statusITEM_txt"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_statusITEM_txt"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_vlrpedido": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "dcevpb_solicitacaotempoaprovacao.vlrpedido": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao.vlrpedido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao.vlrpedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_vlrpedidos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_statusitem": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "dcevpb_solicitacaotempoaprovacao.statusitem": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao.statusitem"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao.statusitem"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_statusitems"
 			        }
 			      ]
 			    },

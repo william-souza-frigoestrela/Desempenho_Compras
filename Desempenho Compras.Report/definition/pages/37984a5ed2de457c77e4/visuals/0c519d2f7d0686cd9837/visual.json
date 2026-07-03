@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "0c519d2f7d0686cd9837",
   "position": {
     "x": 39.878419452887542,
@@ -104,6 +104,21 @@
               "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DESCRICAO",
               "nativeQueryRef": "Produto",
               "displayName": "Produto"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                    }
+                  },
+                  "Property": "MARCAFORNECEDOR"
+                }
+              },
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.MARCAFORNECEDOR",
+              "nativeQueryRef": "Marca",
+              "displayName": "Marca"
             },
             {
               "field": {
@@ -231,11 +246,41 @@
                       "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                     }
                   },
+                  "Property": "DESCRICAOCOTACAO"
+                }
+              },
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DESCRICAOCOTACAO",
+              "nativeQueryRef": "Desc Cotação",
+              "displayName": "Desc Cotação"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                    }
+                  },
                   "Property": "Prioridade"
                 }
               },
               "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.Prioridade",
               "nativeQueryRef": "Prioridade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                    }
+                  },
+                  "Property": "statusITEM txt"
+                }
+              },
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.statusITEM txt",
+              "nativeQueryRef": "Status Item",
+              "displayName": "Status Item"
             }
           ]
         }
@@ -250,7 +295,7 @@
                     "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                   }
                 },
-                "Property": "DTASOLICITACAO"
+                "Property": "SOLIAPROVACAO"
               }
             },
             "direction": "Ascending"
@@ -807,5 +852,247 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "af179a9ab241bc11d698",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DADOS_EMPRESA"
+              }
+            },
+            "Property": "NOMEREDUZIDO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "375582e7bd644e6f9b09",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "DTASOLICITACAO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "92e4c67dee3dc5218479",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "SOLIAPROVACAO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a5cf344e801f29ee373c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "NROSOLICITACAO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6e5d430f4fb2ca213559",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "SEQPRODUTO"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e5d915c2e94feb27ae58",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "DESCRICAO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "12ee94596f79f5d57968",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "UNIDADE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "df1e415a06b2ef46fc21",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "QTDSOLICITADA"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3275723c616c882c13d3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "SOLICITANTE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9e5fedb06b3cc99efc52",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "GRUPO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "64254d5434e8bceef1a2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "SUBGRUPO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4c1b70cd86d9e1e451dc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "Prioridade"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a6becaead6f1ade57127",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "NOME"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7b68342d683100bb90b1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "OBSERVACAO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ae9a02563590b539aa4e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "statusITEM txt"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3949f98bb82c727690f0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "MARCAFORNECEDOR"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "64f7e17e3c7e525a941e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "DESCRICAOCOTACAO"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

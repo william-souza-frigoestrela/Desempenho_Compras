@@ -94,6 +94,11 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 		summarizeBy: none
 		sourceColumn: DTAAPROVACAOPEDIDO
 
+		variation Variation
+			isDefault
+			relationship: 260e9206-5e47-451e-9240-d4d5774e9bc0
+			defaultHierarchy: LocalDateTable_2a496219-74f6-49d0-a4e9-88be3359fcfe.'Hierarquia de datas'
+
 		annotation SummarizationSetBy = Automatic
 
 	column NROPEDIDO
@@ -112,6 +117,11 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 		lineageTag: 1a552e1c-e4ff-46b5-82e0-96cff4fbaa32
 		summarizeBy: none
 		sourceColumn: PRIMEIRA
+
+		variation Variation
+			isDefault
+			relationship: 6a008afd-e702-4e97-a37a-755e4938ab7c
+			defaultHierarchy: LocalDateTable_3ae13e4c-5d0e-483f-9afb-d4b965e59bf6.'Hierarquia de datas'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -141,14 +151,24 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 		summarizeBy: none
 		sourceColumn: SOLIAPROVACAO
 
+		variation Variation
+			isDefault
+			relationship: 8f607a51-8b85-4007-af66-e22820803787
+			defaultHierarchy: LocalDateTable_eec0d6d8-d7e7-444a-805e-c776ffa55bd1.'Hierarquia de datas'
+
 		annotation SummarizationSetBy = Automatic
 
 	column DTAEMISSAO
 		dataType: dateTime
-		formatString: Short Date
+		formatString: General Date
 		lineageTag: 848a9499-5173-4a2c-97dd-28a5ad2db4c5
 		summarizeBy: none
 		sourceColumn: DTAEMISSAO
+
+		variation Variation
+			isDefault
+			relationship: 72f6d29b-9184-4b87-bc6a-a2b4955950db
+			defaultHierarchy: LocalDateTable_7b144d36-6779-410f-becd-fc27b42b020c.'Hierarquia de datas'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -158,6 +178,11 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 		lineageTag: c7560f07-1b07-4370-98cc-424f753b26ad
 		summarizeBy: none
 		sourceColumn: DATAHORAPEDIDO
+
+		variation Variation
+			isDefault
+			relationship: 5a61dafc-4ac1-46d6-b208-fa63e2b1b993
+			defaultHierarchy: LocalDateTable_bb851fa5-f79f-4da0-bbf6-f752590a42f0.'Hierarquia de datas'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -203,7 +228,7 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 		annotation SummarizationSetBy = Automatic
 
-	column PK = format( DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROEMPRESA],"000") & " - " & format( DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROSOLICITACAO],"0000000")
+	column PK = DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROEMPRESA] & " - " & DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROSOLICITACAO]
 		dataType: string
 		lineageTag: 3c8566a5-3dd4-4a0f-b086-9699cb2692c8
 		summarizeBy: none
@@ -212,7 +237,7 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Pk Pedido' = format( DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROEMPRESA],"000") & "-" & format( DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROPEDIDO],"0000000")
+	column 'Pk Pedido' = DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROEMPRESA] & DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROPEDIDO]
 		lineageTag: 9c3a025c-00c4-488d-9341-62cadac6758e
 		summarizeBy: none
 
@@ -294,7 +319,7 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column PK_Item = format( DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROEMPRESA],"000" & " - " & format(DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROSOLICITACAO],"0000000") & " - " & format(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO],"0000000"))
+	column PK_Item = DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROEMPRESA] & " - " & DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROSOLICITACAO] & " - " & DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]
 		lineageTag: 9dcff7a6-f6fb-4e3f-adcc-8785ca95e1cc
 		summarizeBy: none
 
@@ -421,6 +446,56 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 			)
 		lineageTag: bfb53947-2acf-49e9-a4f5-d81c441c2fcd
 		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUSITEM
+		dataType: double
+		lineageTag: d5fd4040-d781-4a47-adbc-06fc65c8fd6a
+		summarizeBy: sum
+		sourceColumn: STATUSITEM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLRPEDIDO
+		dataType: double
+		lineageTag: b2045fc9-7e85-4107-aa9c-4f90512f437e
+		summarizeBy: sum
+		sourceColumn: VLRPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'statusITEM txt' = ```
+			
+			SWITCH(DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUSITEM], 
+			3, "Solicitação Aprovada",
+			4, "Cotação Pré-Aprovada",
+			5, "Cotação Aprovada",
+			9, "Cancelado"
+			)
+			```
+		lineageTag: 9e50ce2c-14be-42a2-95b5-669ead6dfa77
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARCAFORNECEDOR
+		dataType: string
+		lineageTag: 838963e5-903e-44ef-a0f7-fef04d104278
+		summarizeBy: none
+		sourceColumn: MARCAFORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRICAOCOTACAO
+		dataType: string
+		lineageTag: eda11468-fbde-490f-bd72-69dae6e049b8
+		summarizeBy: none
+		sourceColumn: DESCRICAOCOTACAO
 
 		annotation SummarizationSetBy = Automatic
 

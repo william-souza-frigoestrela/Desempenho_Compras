@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "98399a1b983b0c749789",
   "position": {
     "x": 36.571428571428569,
@@ -118,10 +118,10 @@
                     "Entity": "_medidas"
                   }
                 },
-                "Property": "_somaVlrCompra"
+                "Property": "rankingTabela"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
