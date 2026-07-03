@@ -113,10 +113,10 @@
                       "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                     }
                   },
-                  "Property": "MARCAFORNECEDOR"
+                  "Property": "MARCASOLICITADA"
                 }
               },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.MARCAFORNECEDOR",
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.MARCASOLICITADA",
               "nativeQueryRef": "Marca",
               "displayName": "Marca"
             },
@@ -295,7 +295,7 @@
                     "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                   }
                 },
-                "Property": "SOLIAPROVACAO"
+                "Property": "OBSERVACAO"
               }
             },
             "direction": "Ascending"
@@ -856,7 +856,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "af179a9ab241bc11d698",
+        "name": "8ed3f4af7f6a6927ca8e",
         "field": {
           "Column": {
             "Expression": {
@@ -870,7 +870,7 @@
         "type": "Categorical"
       },
       {
-        "name": "375582e7bd644e6f9b09",
+        "name": "3aa7ebaa25e440a837d5",
         "field": {
           "Column": {
             "Expression": {
@@ -884,7 +884,7 @@
         "type": "Categorical"
       },
       {
-        "name": "92e4c67dee3dc5218479",
+        "name": "ecbabedf89b32a7caaea",
         "field": {
           "Column": {
             "Expression": {
@@ -898,7 +898,7 @@
         "type": "Categorical"
       },
       {
-        "name": "a5cf344e801f29ee373c",
+        "name": "1c632aaab1f53fdf0a01",
         "field": {
           "Column": {
             "Expression": {
@@ -912,7 +912,7 @@
         "type": "Categorical"
       },
       {
-        "name": "6e5d430f4fb2ca213559",
+        "name": "cb212d19428bd217685d",
         "field": {
           "Column": {
             "Expression": {
@@ -926,7 +926,7 @@
         "type": "Advanced"
       },
       {
-        "name": "e5d915c2e94feb27ae58",
+        "name": "d8fefd0f0db07c27da8d",
         "field": {
           "Column": {
             "Expression": {
@@ -940,7 +940,7 @@
         "type": "Categorical"
       },
       {
-        "name": "12ee94596f79f5d57968",
+        "name": "85e54b80b24029d4a67b",
         "field": {
           "Column": {
             "Expression": {
@@ -954,7 +954,7 @@
         "type": "Categorical"
       },
       {
-        "name": "df1e415a06b2ef46fc21",
+        "name": "8f5b271d0690eb45fb73",
         "field": {
           "Column": {
             "Expression": {
@@ -968,7 +968,7 @@
         "type": "Advanced"
       },
       {
-        "name": "3275723c616c882c13d3",
+        "name": "cbbf2bd348b18d3e2032",
         "field": {
           "Column": {
             "Expression": {
@@ -982,7 +982,7 @@
         "type": "Categorical"
       },
       {
-        "name": "9e5fedb06b3cc99efc52",
+        "name": "7121da4ea33cd9d8c1df",
         "field": {
           "Column": {
             "Expression": {
@@ -996,7 +996,7 @@
         "type": "Categorical"
       },
       {
-        "name": "64254d5434e8bceef1a2",
+        "name": "809bd76ff849e4a2c0ae",
         "field": {
           "Column": {
             "Expression": {
@@ -1010,7 +1010,7 @@
         "type": "Categorical"
       },
       {
-        "name": "4c1b70cd86d9e1e451dc",
+        "name": "f81ac5800a8ea2ac8441",
         "field": {
           "Column": {
             "Expression": {
@@ -1024,7 +1024,7 @@
         "type": "Categorical"
       },
       {
-        "name": "a6becaead6f1ade57127",
+        "name": "75a1ed548272548e43fa",
         "field": {
           "Column": {
             "Expression": {
@@ -1038,7 +1038,7 @@
         "type": "Categorical"
       },
       {
-        "name": "7b68342d683100bb90b1",
+        "name": "eb6e922344c5ad7be3c6",
         "field": {
           "Column": {
             "Expression": {
@@ -1052,7 +1052,21 @@
         "type": "Categorical"
       },
       {
-        "name": "ae9a02563590b539aa4e",
+        "name": "23709f164fcdf59c0ae7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "DESCRICAOCOTACAO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e775ddb9d925121b0355",
         "field": {
           "Column": {
             "Expression": {
@@ -1066,7 +1080,7 @@
         "type": "Categorical"
       },
       {
-        "name": "3949f98bb82c727690f0",
+        "name": "b37fb3bfa6ac692b2b73",
         "field": {
           "Column": {
             "Expression": {
@@ -1074,21 +1088,7 @@
                 "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
               }
             },
-            "Property": "MARCAFORNECEDOR"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "64f7e17e3c7e525a941e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-              }
-            },
-            "Property": "DESCRICAOCOTACAO"
+            "Property": "MARCASOLICITADA"
           }
         },
         "type": "Categorical"

@@ -5643,16 +5643,6 @@ cultureInfo pt-BR
 			          "marcafornecedor": {
 			            "State": "Generated"
 			          }
-			        },
-			        {
-			          "Marca": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -5681,75 +5671,35 @@ cultureInfo pt-BR
 			          }
 			        }
 			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao.marcasolicitada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+			          "ConceptualProperty": "MARCASOLICITADA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "marcasolicitada": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Marca": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "calendario_2_date_trimestre_has_calendario_2_date_mê": {
-			      "Binding": {
-			        "ConceptualEntity": "Calendario2"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "calendario_2.date.trimestre": {
-			          "Target": {
-			            "Entity": "calendario_2.date.trimestre"
-			          }
-			        },
-			        "calendario_2.date.mê": {
-			          "Target": {
-			            "Entity": "calendario_2.date.mê"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario_2.date.trimestre"
-			            },
-			            "Object": {
-			              "Role": "calendario_2.date.mê"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "trimestres_have_mê"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario_2.date.mê"
-			            },
-			            "Object": {
-			              "Role": "calendario_2.date.trimestre"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "mê_have_trimestres"
-			        },
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "calendario_2.date.mê"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "calendario_2.date.trimestre"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "mê_are_in_trimestres7"
-			        }
-			      ]
-			    },
 			    "calendario_2_date_ano_has_calendario_2_date_trimestre": {
 			      "Binding": {
 			        "ConceptualEntity": "Calendario2"
@@ -6076,7 +6026,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "trimestres_have_mê1"
+			          "ID": "trimestres_have_mê"
 			        },
 			        {
 			          "Attribute": {
@@ -6089,7 +6039,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "mê_have_trimestres1"
+			          "ID": "mê_have_trimestres"
 			        },
 			        {
 			          "Preposition": {
@@ -6439,7 +6389,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "trimestres_have_mê2"
+			          "ID": "trimestres_have_mê1"
 			        },
 			        {
 			          "Attribute": {
@@ -6452,7 +6402,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "mê_have_trimestres2"
+			          "ID": "mê_have_trimestres1"
 			        },
 			        {
 			          "Preposition": {
@@ -6802,7 +6752,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "trimestres_have_mê3"
+			          "ID": "trimestres_have_mê2"
 			        },
 			        {
 			          "Attribute": {
@@ -6815,7 +6765,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "mê_have_trimestres3"
+			          "ID": "mê_have_trimestres2"
 			        },
 			        {
 			          "Preposition": {
@@ -7165,7 +7115,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "trimestres_have_mê4"
+			          "ID": "trimestres_have_mê3"
 			        },
 			        {
 			          "Attribute": {
@@ -7178,7 +7128,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "mê_have_trimestres4"
+			          "ID": "mê_have_trimestres3"
 			        },
 			        {
 			          "Preposition": {
@@ -7528,7 +7478,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "trimestres_have_mê5"
+			          "ID": "trimestres_have_mê4"
 			        },
 			        {
 			          "Attribute": {
@@ -7541,7 +7491,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "mê_have_trimestres5"
+			          "ID": "mê_have_trimestres4"
 			        },
 			        {
 			          "Preposition": {
@@ -7891,7 +7841,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "trimestres_have_mê6"
+			          "ID": "trimestres_have_mê5"
 			        },
 			        {
 			          "Attribute": {
@@ -7904,7 +7854,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "mê_have_trimestres6"
+			          "ID": "mê_have_trimestres5"
 			        },
 			        {
 			          "Preposition": {
@@ -8254,7 +8204,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "trimestres_have_mê7"
+			          "ID": "trimestres_have_mê6"
 			        },
 			        {
 			          "Attribute": {
@@ -8267,7 +8217,7 @@ cultureInfo pt-BR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "mê_have_trimestres7"
+			          "ID": "mê_have_trimestres6"
 			        },
 			        {
 			          "Preposition": {
@@ -8748,6 +8698,39 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "calendarios_have_dcevpb_solicitacaotempoaprovacaos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_marcasolicitada": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "dcevpb_solicitacaotempoaprovacao.marcasolicitada": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao.marcasolicitada"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao.marcasolicitada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_marcasolicitadas"
 			        }
 			      ]
 			    },
@@ -12721,6 +12704,72 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_nrosolicitacaos"
+			        }
+			      ]
+			    },
+			    "calendario_2_date_trimestre_has_calendario_2_date_mê": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario2"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario_2.date.trimestre": {
+			          "Target": {
+			            "Entity": "calendario_2.date.trimestre"
+			          }
+			        },
+			        "calendario_2.date.mê": {
+			          "Target": {
+			            "Entity": "calendario_2.date.mê"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario_2.date.trimestre"
+			            },
+			            "Object": {
+			              "Role": "calendario_2.date.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_have_mê7"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario_2.date.mê"
+			            },
+			            "Object": {
+			              "Role": "calendario_2.date.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mê_have_trimestres7"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "calendario_2.date.mê"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "calendario_2.date.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mê_are_in_trimestres7"
 			        }
 			      ]
 			    },
